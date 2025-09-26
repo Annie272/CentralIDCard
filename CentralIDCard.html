@@ -112,9 +112,9 @@
       <input
         type="hidden"
         name="first_name"
-        value="Central ID Demo Check Trial"
+        value="Central ID Trial"
       />
-      <input type="hidden" name="last_name" value="Central Demo Check" />
+      <input type="hidden" name="last_name" value=" Demo Check" />
       <input type="hidden" name="status" value="New" />
       <input type="hidden" name="phone" value="28436836129" />
       <input type="hidden" name="lead_source" value="Web Form" />
@@ -183,7 +183,7 @@
             const day = String(date.getDate()).padStart(2, "0");
             const month = String(date.getMonth() + 1).padStart(2, "0");
             const year = date.getFullYear();
-            return ${month}/${day}/${year};
+            return `${month}/${day}/${year}`;
           },
           parse(dateString) {
             const [month, day, year] = dateString.split("/");
@@ -243,7 +243,7 @@
             dialogTitle.textContent =
               "Below Mandatory Fields are missing and the Team will contact you shortly.";
             missingFieldsList.innerHTML = missing
-              .map((f) => <li>${f}</li>)
+              .map((f) => `<li>${f}</li>`)
               .join("");
           } else {
             dialogTitle.textContent =
